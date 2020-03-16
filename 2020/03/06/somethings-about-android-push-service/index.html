@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="关于消息推送什么是消息推送？“消息推送（Push）指运营人员通过自己的产品或第三方工具对用户移动设备进行的主动消息推送”。这句话讲的是一个运营概念。本质上，我们做技术的理解的消息推送应该是客户端将服务端更新的信息通知给客户。 推送的分类 APNs（Apple Push Notification services，即苹果推送通知服务） FCM（Firebase Cloud Messaging），原来">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android消息推送的一些个人理解">
+<meta property="og:url" content="https://jclian.com/2020/03/06/somethings-about-android-push-service/index.html">
+<meta property="og:site_name" content="一窝鸡尼斯&#39;s 技术分享">
+<meta property="og:description" content="关于消息推送什么是消息推送？“消息推送（Push）指运营人员通过自己的产品或第三方工具对用户移动设备进行的主动消息推送”。这句话讲的是一个运营概念。本质上，我们做技术的理解的消息推送应该是客户端将服务端更新的信息通知给客户。 推送的分类 APNs（Apple Push Notification services，即苹果推送通知服务） FCM（Firebase Cloud Messaging），原来">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://jclian.com/2020/03/06/somethings-about-android-push-service/connections.jpg">
+<meta property="og:image" content="https://communityfile-drcn.op.hicloud.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20200121152547.29452826487859134320028369605651:50510120091754:2800:9F8B751FFD23EB7A3FD4A9D6EF369568D777EDFD68EBBDCE9469C51DCD140929.jpg?needInitFileName=true?needInitFileName=true">
+<meta property="og:image" content="https://f5.market.mi-img.com/download/MiPass/0de2d4f855c08ed2343e17463d29fd4644d4160f8/MiPush%E9%80%BB%E8%BE%91%E5%9B%BE.png">
+<meta property="og:image" content="https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/30049/cn_zh/1546048282352/%E5%9B%BE%E7%89%87.png">
+<meta property="og:image" content="https://xg.qq.com/docs/assets/%E4%BF%A1%E9%B8%BD%E6%9C%8D%E5%8A%A1%E6%B5%81%E7%A8%8B%E6%80%BB%E8%A7%88.png">
+<meta property="og:updated_time" content="2020-03-06T07:59:38.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android消息推送的一些个人理解">
+<meta name="twitter:description" content="关于消息推送什么是消息推送？“消息推送（Push）指运营人员通过自己的产品或第三方工具对用户移动设备进行的主动消息推送”。这句话讲的是一个运营概念。本质上，我们做技术的理解的消息推送应该是客户端将服务端更新的信息通知给客户。 推送的分类 APNs（Apple Push Notification services，即苹果推送通知服务） FCM（Firebase Cloud Messaging），原来">
+<meta name="twitter:image" content="https://jclian.com/2020/03/06/somethings-about-android-push-service/connections.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jclian.com/2020/03/06/somethings-about-android-push-service/">
+
+
+
+
+
+  <title>Android消息推送的一些个人理解 | 一窝鸡尼斯's 技术分享</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139215653-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
+
+      @keyframes octocat-wave {
+
+        0%,
+        100% {
+          transform: rotate(0)
+        }
+
+        20%,
+        60% {
+          transform: rotate(-25deg)
+        }
+
+        40%,
+        80% {
+          transform: rotate(10deg)
+        }
+      }
+
+      @media (max-width:500px) {
+        .github-corner:hover .octo-arm {
+          animation: none
+        }
+
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out
+        }
+      }
+
+    </style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一窝鸡尼斯's 技术分享</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/06/somethings-about-android-push-service/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一窝鸡尼斯">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android消息推送的一些个人理解</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T15:41:00+08:00">
+                2020-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="关于消息推送"><a href="#关于消息推送" class="headerlink" title="关于消息推送"></a>关于消息推送</h1><h2 id="什么是消息推送？"><a href="#什么是消息推送？" class="headerlink" title="什么是消息推送？"></a>什么是消息推送？</h2><p>“消息推送（Push）指运营人员通过自己的产品或第三方工具对用户移动设备进行的主动消息推送”。这句话讲的是一个运营概念。本质上，我们做技术的理解的消息推送应该是客户端将服务端更新的信息通知给客户。</p>
+<h2 id="推送的分类"><a href="#推送的分类" class="headerlink" title="推送的分类"></a>推送的分类</h2><ul>
+<li>APNs（Apple Push Notification services，即苹果推送通知服务）</li>
+<li>FCM（Firebase Cloud Messaging），原来叫 GCM（Google Cloud Messaging）；因为众所周知的原因，在国内无法使用。</li>
+<li>第三方的推送服务。国内比较知名的有：小米推送、华为推送、腾讯信鸽、阿里云推送、个推、极光推送等。  </li>
+</ul>
+<h2 id="有什么实现方案？"><a href="#有什么实现方案？" class="headerlink" title="有什么实现方案？"></a>有什么实现方案？</h2><p>下面就来讨论下，有什么方式去实现一个推送服务。大概就下面几种：</p>
+<ol>
+<li><p>轮询</p>
+<p> 客户端定期发起，服务器不需要知道客户端地址是什么，有消息直接响应客户端的请求即可。可以说是最简单的实现方案。如果推送对于实时性的要求不高的话，这种方案相当适合。但是在邦讯的产品里面，实时性的要求还是相对比较高的，譬如蓝牙门禁要求平台新增任务，客户端马上可以看见，这个大概就是10s内。目前门禁App用的就是这种方案（每10s 请求一次）。那么带来的问题就是，电量和流量的快速消耗。稍微在后台驻留久一点就会被任务管理干掉。</p>
+</li>
+<li><p>SMS</p>
+<p> 借助短信实现信息的展示，就是弹个短信到通知栏的效果。优点是到达率高、可靠和稳定。缺点也相当明显。短信的成本太高；需要运营商的配合；短信很容易被挟持。    </p>
+</li>
+<li><p>长连接</p>
+<p> 客户端与服务器建立TCP长连接。客户端向服务器定时发送心跳包。有消息的时候，服务器通过已建立的TCP连接通知客户端。这个应该是目前最佳的方案。</p>
+</li>
+<li><p>XMPP, MQTT等</p>
+</li>
+</ol>
+<h2 id="长连接和心跳"><a href="#长连接和心跳" class="headerlink" title="长连接和心跳"></a>长连接和心跳</h2><h3 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h3><p><img src="./connections.jpg" alt="persistent connection"></p>
+<h4 id="长连接断开的原因"><a href="#长连接断开的原因" class="headerlink" title="长连接断开的原因"></a>长连接断开的原因</h4><ol>
+<li>客户端和服务器链路故障</li>
+<li>服务器宕机</li>
+<li>网线被挖断</li>
+<li>NAT 超时  </li>
+<li>网络状态切换</li>
+<li>DHCP 的租期</li>
+</ol>
+<h3 id="心跳"><a href="#心跳" class="headerlink" title="心跳"></a>心跳</h3><h2 id="市面上的产品"><a href="#市面上的产品" class="headerlink" title="市面上的产品"></a>市面上的产品</h2><h4 id="华为"><a href="#华为" class="headerlink" title="华为"></a>华为</h4><p><img src="https://communityfile-drcn.op.hicloud.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20200121152547.29452826487859134320028369605651:50510120091754:2800:9F8B751FFD23EB7A3FD4A9D6EF369568D777EDFD68EBBDCE9469C51DCD140929.jpg?needInitFileName=true?needInitFileName=true" alt></p>
+<h4 id="小米"><a href="#小米" class="headerlink" title="小米"></a>小米</h4><p><img src="https://f5.market.mi-img.com/download/MiPass/0de2d4f855c08ed2343e17463d29fd4644d4160f8/MiPush%E9%80%BB%E8%BE%91%E5%9B%BE.png" alt></p>
+<h4 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h4><p><img src="https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/30049/cn_zh/1546048282352/%E5%9B%BE%E7%89%87.png" alt></p>
+<h4 id="腾讯信鸽"><a href="#腾讯信鸽" class="headerlink" title="腾讯信鸽"></a>腾讯信鸽</h4><p><img src="https://xg.qq.com/docs/assets/%E4%BF%A1%E9%B8%BD%E6%9C%8D%E5%8A%A1%E6%B5%81%E7%A8%8B%E6%80%BB%E8%A7%88.png" alt></p>
+<h2 id="市面产品的横评"><a href="#市面产品的横评" class="headerlink" title="市面产品的横评"></a>市面产品的横评</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:center">小米推送</th>
+<th style="text-align:center">华为推送</th>
+<th style="text-align:center">腾讯信鸽</th>
+<th style="text-align:center">阿里云推送</th>
+<th style="text-align:center">极光推送</th>
+<th style="text-align:center">个推</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">APNs</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left">FCM</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（C#）</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（.Net）</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（Golang）</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes（非官方）</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（C/C++）</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（Python）</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（PHP）</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（Node.js）</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes（非官方）</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left">服务端SDK（Java）</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:left">OpenAPI</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="统一推送联盟"><a href="#统一推送联盟" class="headerlink" title="统一推送联盟"></a>统一推送联盟</h2><p>下面这一段是引用自统一推送联盟官网的简介：</p>
+<blockquote>
+<p>统一推送联盟成立于 <strong>2017年10月</strong> ，挂靠单位是电信终端产业协会（TAF），接受工业和信息化部业务指导，住所设在北京。联盟核心任务是：探索推送行业创新，促进终端生产厂商、应用开发厂商和第三方服务提供商等进行深入合作，整合行业资源，助推形成统一的推送体系，创造绿色环境，减少与终端用户的利益冲突，提升整体行业形象，降低整体行业的实现成本，形成自律基础上的产业链协同发展，实现产业的共同繁荣。</p>
+<p>统一推送联盟是在自愿、平等、互利、合作的基础上，由国内外消息推送产业相关的企、事业单位、社团组织、高等院校、科研院所等自愿结成的跨行业、开放性、非营利性的社会组织。本联盟旨在促进相关主体之间的交流和深度合作，促进供需对接和知识共享，形成优势互补，有效推进消息推送产业的发展，切实解决产业现实问题。</p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://juejin.im/entry/56dc5578efa6310054d8cf1c" target="_blank" rel="noopener"># Android推送技术的研究</a></p>
+<p><a href="https://juejin.im/post/58db17b961ff4b006ce2ebc9" target="_blank" rel="noopener"># 安卓推送这件小事</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&amp;mid=207243549&amp;idx=1&amp;sn=4ebe4beb8123f1b5ab58810ac8bc5994" target="_blank" rel="noopener"># Android微信智能心跳方案</a></p>
+<p>Check this <a href="https://jclian.com/2020/03/06/somethings-about-android-push-service/">https://jclian.com/2020/03/06/somethings-about-android-push-service/</a> @一窝鸡尼斯</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/06/android-memo-somethings-about-developer/" rel="next" title="Android开发小技巧">
+                <i class="fa fa-chevron-left"></i> Android开发小技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+        
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">一窝鸡尼斯</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于消息推送"><span class="nav-number">1.</span> <span class="nav-text">关于消息推送</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是消息推送？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是消息推送？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推送的分类"><span class="nav-number">1.2.</span> <span class="nav-text">推送的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有什么实现方案？"><span class="nav-number">1.3.</span> <span class="nav-text">有什么实现方案？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长连接和心跳"><span class="nav-number">1.4.</span> <span class="nav-text">长连接和心跳</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#长连接"><span class="nav-number">1.4.1.</span> <span class="nav-text">长连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#长连接断开的原因"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">长连接断开的原因</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#心跳"><span class="nav-number">1.4.2.</span> <span class="nav-text">心跳</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#市面上的产品"><span class="nav-number">1.5.</span> <span class="nav-text">市面上的产品</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#华为"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">华为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小米"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">小米</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阿里云"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">阿里云</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#腾讯信鸽"><span class="nav-number">1.5.0.4.</span> <span class="nav-text">腾讯信鸽</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#市面产品的横评"><span class="nav-number">1.6.</span> <span class="nav-text">市面产品的横评</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统一推送联盟"><span class="nav-number">1.7.</span> <span class="nav-text">统一推送联盟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+ <span class="author" itemprop="copyrightHolder">一窝鸡尼斯</span>
+<span>
+ <a href="http://beian.miit.gov.cn/">粤ICP备19022243号</a>
+ </span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      
+    </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+</html>

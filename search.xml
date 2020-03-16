@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Dota2英雄排序</title>
+      <link href="/2019/08/22/sort_dota2_heros/"/>
+      <url>/2019/08/22/sort_dota2_heros/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Dota2-英雄颜色排序"><a href="#Dota2-英雄颜色排序" class="headerlink" title="Dota2 英雄颜色排序"></a>Dota2 英雄颜色排序</h2><h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p><a href="https://github.com/bqbs/sort_heros" target="_blank" rel="noopener">Github</a></p><h3 id="希望想实现的效果"><a href="#希望想实现的效果" class="headerlink" title="希望想实现的效果"></a>希望想实现的效果</h3><p><img src="./heros_hoho.jpg" alt="heros_hoho"></p><h3 id="提取到主色调"><a href="#提取到主色调" class="headerlink" title="提取到主色调"></a>提取到主色调</h3><p><img src="./colors_1565625306.png" alt="colors_1565625306"></p><h3 id="排序的结果"><a href="#排序的结果" class="headerlink" title="排序的结果"></a>排序的结果</h3><p><img src="./sort_heros1565625306.png" alt="sort_heros1565625306"></p><h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><ul><li>看起来不是很棒。</li><li>本人是个py新手，项目花了一点时间，到处复制粘贴代码写的。</li><li>项目不是很完善，会努力完善的，但是应该是实现不到HOHO微博截图上的效果的。</li><li>如果你点进来了，让你失望了，见谅。</li></ul><p>Check this <a href="https://blog.jclian.com/2019/08/22/sort_dota2_heros/">https://blog.jclian.com/2019/08/22/sort_dota2_heros/</a> @一窝鸡尼斯</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于Tiny4412开发板的折腾记录</title>
+      <link href="/2019/04/01/somethings_about_Tiny4412/"/>
+      <url>/2019/04/01/somethings_about_Tiny4412/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>自己在折腾这块开发板的时候找到的资料很少，挺痛苦的，记录一下自己折腾出来的一些东西，希望对其他小伙伴有帮助吧。</p></blockquote><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul><li>开发板：Tiny 4412/Super4412SDK 1611b</li><li>系统：Android 5.0</li><li>内核版本:linux 3.0.86</li></ul><h1 id="复用为GPIO"><a href="#复用为GPIO" class="headerlink" title="复用为GPIO"></a>复用为GPIO</h1><h2 id="GPX3"><a href="#GPX3" class="headerlink" title="GPX3"></a>GPX3</h2><blockquote><p>在我的需求里面，需要用上GPX3_2、GPX3_3、GPX3_4和GPX3_5这四个pin。<br>这几个pin作为输入跟开发板上的测试按键（K1~K4）绑定。</p></blockquote><ul><li>复用这几pin，我们需要 <strong>取消</strong> Tiny4412板上按键的驱动<img src="/2019/04/01/somethings_about_Tiny4412/sat_1.png" title="按键驱动"></li></ul><p>位置如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-&gt; Device Drivers</span><br><span class="line">  -&gt; Character devices</span><br><span class="line">    -&gt; Buttons driver for FriendlyARM Tiny4412 development boards</span><br></pre></td></tr></table></figure></p><ul><li>如果没有看见这个选项， 我们需要 <strong>取消</strong> 选定下面的选项，启用这个配置<img src="/2019/04/01/somethings_about_Tiny4412/sat_2.png" title="GPIO driver support"></li></ul><p>位置如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-&gt;Device Drivers</span><br><span class="line">  -&gt;Input device support </span><br><span class="line">    -&gt;Miscellaneous drivers</span><br><span class="line">      -&gt;GPIO driver support</span><br></pre></td></tr></table></figure></p><p>如果有什么疑问或者建议欢迎留言交流</p><p>持续更新中。。。</p><p>Check this <a href="https://blog.jclian.com/2019/04/01/somethings_about_Tiny4412/">https://blog.jclian.com/2019/04/01/somethings_about_Tiny4412/</a> @一窝鸡尼斯</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>烂笔头——常用的Linux命令</title>
+      <link href="/2019/04/01/linux_notes_for_me/"/>
+      <url>/2019/04/01/linux_notes_for_me/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>记录自己使用Linux过程中的一些指令，备忘。</p></blockquote><h2 id="切换Java版本"><a href="#切换Java版本" class="headerlink" title="切换Java版本"></a>切换Java版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br></pre></td></tr></table></figure><h2 id="查看android开发板上GPIO针脚的状态"><a href="#查看android开发板上GPIO针脚的状态" class="headerlink" title="查看android开发板上GPIO针脚的状态"></a>查看android开发板上GPIO针脚的状态</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /sys/kernel/debug/gpio</span><br></pre></td></tr></table></figure><h2 id="替代scp"><a href="#替代scp" class="headerlink" title="替代scp"></a>替代scp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar czf - ./* | ssh [user]@[host] tar xzf - -C ~/saved_tree</span><br></pre></td></tr></table></figure><p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [user]@[host] &quot;tar czf - ~/saved_tree&quot; | tar xzvf - -C ./</span><br></pre></td></tr></table></figure></p><h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="安装Ubuntu后的几个操作"><a href="#安装Ubuntu后的几个操作" class="headerlink" title="安装Ubuntu后的几个操作"></a>安装Ubuntu后的几个操作</h2><ol><li><p>安装chromium浏览器</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install chromium-browser</span><br></pre></td></tr></table></figure></li><li><p>安装插件<br><a href="https://github.com/FelisCatus/SwitchyOmega" target="_blank" rel="noopener">SwitchyOmega</a></p></li><li>安装s_s</li></ol><h2 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h2><ol><li>内置读卡器识别不了，执行一下指令。重启电脑后应该可以识别。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install --reinstall udisks2</span><br></pre></td></tr></table></figure></li></ol><p>个人笔记，想到什么写什么 \^_^<br>持续更新。。。</p><p>Check this <a href="https://blog.jclian.com/2019/04/01/linux_notes_for_me/">https://blog.jclian.com/2019/04/01/linux_notes_for_me/</a> @一窝鸡尼斯</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 烂笔头 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jenkins的配置以及使用</title>
+      <link href="/2019/04/01/how_to_configure_anduse_jenkins/"/>
+      <url>/2019/04/01/how_to_configure_anduse_jenkins/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装的方法千千万</p><h1 id="配置节点"><a href="#配置节点" class="headerlink" title="配置节点"></a>配置节点</h1><p>登录到节点服务器，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://[hostname]/jnlpJars/agent.jar</span><br></pre></td></tr></table></figure></p><p>未完待续…</p><h1 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h1><ol><li>保持你的原服务和新服务为同一个版本的Jenkins。（建议使用相同版本迁移，有需要新服务再升级）</li><li>停机，关停新旧服务。</li><li>迁移文件</li></ol><p>原服务器执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rsync -e <span class="string">"ssh -p22"</span> -avpgolr --delete /var/jenkins/ [新服务器用户名]@[新服务器的host]:[新服务下JENKINS_HOME目录]</span><br></pre></td></tr></table></figure><p>这一步是在老服务器上把文件拷贝到新服务器上</p><ol start="4"><li>变更文件所有者</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R jenkins:jenkins [/path/to/JENKINS_HOME]</span><br></pre></td></tr></table></figure><ol start="5"><li>重启Jenkins服务</li></ol><p>Check this <a href="https://blog.jclian.com/2019/04/01/how_to_configure_anduse_jenkins/">https://blog.jclian.com/2019/04/01/how_to_configure_anduse_jenkins/</a> @一窝鸡尼斯</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 烂笔头 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派摄像头直播推流</title>
+      <link href="/2019/04/01/raspberry_pi_camera_live_streaming/"/>
+      <url>/2019/04/01/raspberry_pi_camera_live_streaming/</url>
+      
+        <content type="html"><![CDATA[<p>折腾了一下树莓派摄像头直播推流，记录一下这个过程。面向搜索引擎的debug，莫见怪。</p><p>首先，肯定是搜索相关的东西啦，找到了一篇比较详细的文章《<a href="http://shumeipai.nxez.com/2017/11/01/build-rtmp-stream-live-server-with-raspberry-pi.html" target="_blank" rel="noopener">用树莓派做 RTMP 流直播服务器，可推送至斗鱼直播</a>》。<br>按照文章的做法实践下来，基本上是可行的。<br>但是这个教程下来，直播是没有声音的，我的usb摄像头集成了麦克风，但是不确定是否可用，所以需要测试一下（老套路，Google一下）。</p><p>测试的麦克风，可以读一下<strong>Watchtower</strong>的《 <a href="https://zhuanlan.zhihu.com/p/22685974" target="_blank" rel="noopener">树莓派上麦克风的使用方式</a>》</p><p>使用这条指令推送音视频到斗鱼</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gst-launch-1.0 -v --gst-debug=flvmux:0,rtmpsink:0 v4l2src device=/dev/video0 ! 'video/x-raw, width=640, height=480, framerate=30/1' ! queue ! videoconvert ! omxh264enc ! h264parse ! queue ! mux. alsasrc device='plughw:1,0' ! audio/x-raw,width=16,depth=16,rate=44100,channel=1 ! queue ! audioconvert ! audioresample ! voaacenc ! aacparse ! queue ! flvmux streamable=true name=mux ! queue ! rtmpsink location='rtmp://[斗鱼推流地址]/[推流码] live=1'</span><br></pre></td></tr></table></figure><p><strong>注意：</strong></p><ul><li>确认摄像头是否支持录制的分辨率</li><li>如果听不到声音，可以适当降低采样率（rate=44100）</li></ul><p><a href="https://github.com/socallinuxexpo/video-capture/wiki/GStreamer-notes" target="_blank" rel="noopener">GStreamer-notes</a><br>底下有一段推送音视频到油管的，可以稍微参考一下。</p><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="https://github.com/socallinuxexpo/video-capture/wiki/GStreamer-notes" target="_blank" rel="noopener">GStreamer-notes</a><br><a href="http://shumeipai.nxez.com/2017/11/01/build-rtmp-stream-live-server-with-raspberry-pi.html" target="_blank" rel="noopener">用树莓派做 RTMP 流直播服务器，可推送至斗鱼直播</a><br><a href="https://www.zhihu.com/people/xu-tian-yu-70-52" target="_blank" rel="noopener">树莓派上麦克风的使用方式</a></p><p>简单记录，利己利人。</p><p>Check this <a href="https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/</a> @一窝鸡尼斯</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Raspberry Pi </tag>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello</title>
+      <link href="/2019/04/01/Hello/"/>
+      <url>/2019/04/01/Hello/</url>
+      
+        <content type="html"><![CDATA[<p>上来先F某书。发邮件申诉解锁文章，一个星期都没回。<br>决定自己维护了，大家看不看得到，随缘。<br>努力写点什么。<br>坚持写点什么。</p><p>Check this <a href="https://blog.jclian.com/2019/04/01/Hello/">https://blog.jclian.com/2019/04/01/Hello/</a> @一窝鸡尼斯</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 小声BB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

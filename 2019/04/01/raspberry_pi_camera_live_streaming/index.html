@@ -2,10 +2,11 @@
 
 
 
-  
+
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
+
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Raspberry Pi,树莓派,">
+  <meta name="keywords" content="Raspberry Pi,树莓派,">
 
 
 
@@ -80,14 +81,14 @@
 
 
 <meta name="description" content="折腾了一下树莓派摄像头直播推流，记录一下这个过程。面向搜索引擎的debug，莫见怪。 首先，肯定是搜索相关的东西啦，找到了一篇比较详细的文章《用树莓派做 RTMP 流直播服务器，可推送至斗鱼直播》。按照文章的做法实践下来，基本上是可行的。但是这个教程下来，直播是没有声音的，我的usb摄像头集成了麦克风，但是不确定是否可用，所以需要测试一下（老套路，Google一下）。 测试的麦克风，可以读一下Wa">
-<meta name="keywords" content="Linux,Raspberry Pi,树莓派">
+<meta name="keywords" content="Raspberry Pi,树莓派">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派摄像头直播推流">
-<meta property="og:url" content="http://jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/index.html">
+<meta property="og:url" content="https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/index.html">
 <meta property="og:site_name" content="一窝鸡尼斯&#39;s Blog">
 <meta property="og:description" content="折腾了一下树莓派摄像头直播推流，记录一下这个过程。面向搜索引擎的debug，莫见怪。 首先，肯定是搜索相关的东西啦，找到了一篇比较详细的文章《用树莓派做 RTMP 流直播服务器，可推送至斗鱼直播》。按照文章的做法实践下来，基本上是可行的。但是这个教程下来，直播是没有声音的，我的usb摄像头集成了麦克风，但是不确定是否可用，所以需要测试一下（老套路，Google一下）。 测试的麦克风，可以读一下Wa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-10T02:32:58.746Z">
+<meta property="og:updated_time" content="2019-08-26T02:42:17.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派摄像头直播推流">
 <meta name="twitter:description" content="折腾了一下树莓派摄像头直播推流，记录一下这个过程。面向搜索引擎的debug，莫见怪。 首先，肯定是搜索相关的东西啦，找到了一篇比较详细的文章《用树莓派做 RTMP 流直播服务器，可推送至斗鱼直播》。按照文章的做法实践下来，基本上是可行的。但是这个教程下来，直播是没有声音的，我的usb摄像头集成了麦克风，但是不确定是否可用，所以需要测试一下（老套路，Google一下）。 测试的麦克风，可以读一下Wa">
@@ -120,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">
+  <link rel="canonical" href="https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">
 
 
 
@@ -151,12 +152,46 @@
 
   
   
-    
+  
   
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
+    
+    <style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
 
+      @keyframes octocat-wave {
+
+        0%,
+        100% {
+          transform: rotate(0)
+        }
+
+        20%,
+        60% {
+          transform: rotate(-25deg)
+        }
+
+        40%,
+        80% {
+          transform: rotate(10deg)
+        }
+      }
+
+      @media (max-width:500px) {
+        .github-corner:hover .octo-arm {
+          animation: none
+        }
+
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out
+        }
+      }
+
+    </style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -247,8 +282,8 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+<div id="posts" class="posts-expand">
+  
 
   
 
@@ -261,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">
+    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -320,17 +355,6 @@
 
                 
                 
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
-                  </a>
-                </span>
-
-                
-                
               
             </span>
           
@@ -364,7 +388,8 @@
         <p>折腾了一下树莓派摄像头直播推流，记录一下这个过程。面向搜索引擎的debug，莫见怪。</p>
 <p>首先，肯定是搜索相关的东西啦，找到了一篇比较详细的文章《<a href="http://shumeipai.nxez.com/2017/11/01/build-rtmp-stream-live-server-with-raspberry-pi.html" target="_blank" rel="noopener">用树莓派做 RTMP 流直播服务器，可推送至斗鱼直播</a>》。<br>按照文章的做法实践下来，基本上是可行的。<br>但是这个教程下来，直播是没有声音的，我的usb摄像头集成了麦克风，但是不确定是否可用，所以需要测试一下（老套路，Google一下）。</p>
 <p>测试的麦克风，可以读一下<strong>Watchtower</strong>的《 <a href="https://zhuanlan.zhihu.com/p/22685974" target="_blank" rel="noopener">树莓派上麦克风的使用方式</a>》</p>
-<p>使用这条指令推送音视频到斗鱼<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gst-launch-1.0 -v --gst-debug=flvmux:0,rtmpsink:0 v4l2src device=/dev/video0 ! 'video/x-raw, width=640, height=480, framerate=30/1' ! queue ! videoconvert ! omxh264enc ! h264parse ! queue ! mux. alsasrc device='plughw:1,0' ! audio/x-raw,width=16,depth=16,rate=44100,channel=1 ! queue ! audioconvert ! audioresample ! voaacenc ! aacparse ! queue ! flvmux streamable=true name=mux ! queue ! rtmpsink location='rtmp://[斗鱼推流地址]/[推流码] live=1'</span><br></pre></td></tr></table></figure></p>
+<p>使用这条指令推送音视频到斗鱼</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gst-launch-1.0 -v --gst-debug=flvmux:0,rtmpsink:0 v4l2src device=/dev/video0 ! 'video/x-raw, width=640, height=480, framerate=30/1' ! queue ! videoconvert ! omxh264enc ! h264parse ! queue ! mux. alsasrc device='plughw:1,0' ! audio/x-raw,width=16,depth=16,rate=44100,channel=1 ! queue ! audioconvert ! audioresample ! voaacenc ! aacparse ! queue ! flvmux streamable=true name=mux ! queue ! rtmpsink location='rtmp://[斗鱼推流地址]/[推流码] live=1'</span><br></pre></td></tr></table></figure>
 <p><strong>注意：</strong></p>
 <ul>
 <li>确认摄像头是否支持录制的分辨率</li>
@@ -373,6 +398,7 @@
 <p><a href="https://github.com/socallinuxexpo/video-capture/wiki/GStreamer-notes" target="_blank" rel="noopener">GStreamer-notes</a><br>底下有一段推送音视频到油管的，可以稍微参考一下。</p>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="https://github.com/socallinuxexpo/video-capture/wiki/GStreamer-notes" target="_blank" rel="noopener">GStreamer-notes</a><br><a href="http://shumeipai.nxez.com/2017/11/01/build-rtmp-stream-live-server-with-raspberry-pi.html" target="_blank" rel="noopener">用树莓派做 RTMP 流直播服务器，可推送至斗鱼直播</a><br><a href="https://www.zhihu.com/people/xu-tian-yu-70-52" target="_blank" rel="noopener">树莓派上麦克风的使用方式</a></p>
 <p>简单记录，利己利人。</p>
+<p>Check this <a href="https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/</a> @一窝鸡尼斯</p>
 
       
     </div>
@@ -389,8 +415,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
             <a href="/tags/Raspberry-Pi/" rel="tag"># Raspberry Pi</a>
           
@@ -436,10 +460,10 @@
 
 
 
-    <div class="post-spread">
-      
-    </div>
+  <div class="post-spread">
+    
   </div>
+</div>
 
 
           </div>
@@ -454,8 +478,8 @@
 
         </div>
         
-          
-  
+        
+
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -496,7 +520,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -518,7 +542,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -607,10 +631,10 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      
+    </div>
     
 
     
@@ -697,7 +721,7 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
 
 
@@ -764,4 +788,5 @@
   
 
 </body>
+
 </html>
