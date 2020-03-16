@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="记录开发过程中的各种小技巧 CompoundButton哎呀，我就想给CompoundButton赋个初值 加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;	        if">
+<meta name="description" content="记录开发过程中的各种小技巧 CompoundButtonCompoundButton赋值不执行业务代码  加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;        if (!">
 <meta name="keywords" content="Android,安卓">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android开发小技巧">
-<meta property="og:url" content="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/index.html">
-<meta property="og:site_name" content="一窝鸡尼斯&#39;s 技术分享">
-<meta property="og:description" content="记录开发过程中的各种小技巧 CompoundButton哎呀，我就想给CompoundButton赋个初值 加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;	        if">
+<meta property="og:url" content="https://blog.jclian.com/2020/03/06/android-memo-somethings-about-developer/index.html">
+<meta property="og:site_name" content="一窝鸡尼斯&#39;s Blog">
+<meta property="og:description" content="记录开发过程中的各种小技巧 CompoundButtonCompoundButton赋值不执行业务代码  加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;        if (!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-06T08:01:24.853Z">
+<meta property="og:updated_time" content="2020-03-09T02:24:24.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发小技巧">
-<meta name="twitter:description" content="记录开发过程中的各种小技巧 CompoundButton哎呀，我就想给CompoundButton赋个初值 加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;	        if">
+<meta name="twitter:description" content="记录开发过程中的各种小技巧 CompoundButtonCompoundButton赋值不执行业务代码  加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;        if (!">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/">
+  <link rel="canonical" href="https://blog.jclian.com/2020/03/06/android-memo-somethings-about-developer/">
 
 
 
 
 
-  <title>Android开发小技巧 | 一窝鸡尼斯's 技术分享</title>
+  <title>Android开发小技巧 | 一窝鸡尼斯's Blog</title>
   
 
 
@@ -200,7 +200,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">一窝鸡尼斯's 技术分享</span>
+        <span class="site-title">一窝鸡尼斯's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/">
+    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2020/03/06/android-memo-somethings-about-developer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -305,7 +305,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
+      <meta itemprop="name" content="一窝鸡尼斯's Blog">
     </span>
 
     
@@ -386,11 +386,25 @@
 
       
         <p>记录开发过程中的各种小技巧</p>
-<h3 id="CompoundButton"><a href="#CompoundButton" class="headerlink" title="CompoundButton"></a>CompoundButton</h3><p>哎呀，我就想给CompoundButton赋个初值</p>
-<p>加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">compoundButton.setOnCheckedChangeListener &#123; buttonView, isChecked -&gt;</span><br><span class="line">	</span><br><span class="line">        <span class="keyword">if</span> (!buttonView.isPressed) &#123;</span><br><span class="line">                <span class="keyword">return</span><span class="symbol">@setOnCheckedChangeListener</span></span><br><span class="line">         &#125;</span><br><span class="line">        <span class="comment">// 业务代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CompoundButton"><a href="#CompoundButton" class="headerlink" title="CompoundButton"></a>CompoundButton</h3><p>CompoundButton赋值不执行业务代码</p>
+<ol>
+<li><p>加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">compoundButton.setOnCheckedChangeListener &#123; buttonView, isChecked -&gt;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!buttonView.isPressed) &#123;</span><br><span class="line">                <span class="keyword">return</span><span class="symbol">@setOnCheckedChangeListener</span></span><br><span class="line">         &#125;</span><br><span class="line">        <span class="comment">// 业务代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用setOnClickListener</p>
+ <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">compoundButton.setOnClickListener&#123;</span><br><span class="line">   	<span class="keyword">if</span>(it.isChecked) &#123;</span><br><span class="line"></span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 赋值不触发onClickListener</span></span><br><span class="line">   compoundButton.isChecked = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><p>先设null</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compoundButton.setOnCheckedChangeListener(<span class="literal">null</span>)</span><br><span class="line">compoundButton.isChecked = <span class="literal">true</span></span><br><span class="line">compoundButton.setOnCheckedChangeListener(listener)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Kotlin扩展方法 </p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">fun</span> CompoundButton.<span class="title">setCustomChecked</span><span class="params">(value: <span class="type">Boolean</span>,listener: <span class="type">CompoundButton</span>.<span class="type">OnCheckedChangeListener</span>)</span></span> &#123;</span><br><span class="line">     setOnCheckedChangeListener(<span class="literal">null</span>)</span><br><span class="line">     isChecked = value</span><br><span class="line">     setOnCheckedChangeListener(listener)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <p>对CheckBox、RadioButton、Switch都有效。</p>
-<p>Check this <a href="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/">https://jclian.com/2020/03/06/android-memo-somethings-about-developer/</a> @一窝鸡尼斯</p>
+<p>Check this <a href="https://blog.jclian.com/2020/03/06/android-memo-somethings-about-developer/">https://blog.jclian.com/2020/03/06/android-memo-somethings-about-developer/</a> @一窝鸡尼斯</p>
 
       
     </div>
@@ -423,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/22/sort_dota2_heros/" rel="next" title="Dota2英雄颜色排序">
-                <i class="fa fa-chevron-left"></i> Dota2英雄颜色排序
+              <a href="/2020/03/03/pi-and-switch/" rel="next" title="用 USB 继电器开关小风扇">
+                <i class="fa fa-chevron-left"></i> 用 USB 继电器开关小风扇
               </a>
             
           </div>
@@ -512,7 +526,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -523,7 +537,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -534,7 +548,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -591,10 +605,8 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
- <span class="author" itemprop="copyrightHolder">一窝鸡尼斯</span>
-<span>
- <a href="http://beian.miit.gov.cn/">粤ICP备19022243号</a>
- </span>
+  <span class="author" itemprop="copyrightHolder">一窝鸡尼斯</span>
+
   
 </div>
 
