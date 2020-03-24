@@ -5,7 +5,7 @@
 
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
@@ -84,11 +84,11 @@
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android消息推送的一些个人理解">
-<meta property="og:url" content="https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/index.html">
-<meta property="og:site_name" content="一窝鸡尼斯&#39;s Blog">
+<meta property="og:url" content="https://jclian.com/2020/03/06/somethings-about-android-push-service/index.html">
+<meta property="og:site_name" content="一窝鸡尼斯&#39;s 技术分享">
 <meta property="og:description" content="关于消息推送什么是消息推送？“消息推送（Push）指运营人员通过自己的产品或第三方工具对用户移动设备进行的主动消息推送”。这句话讲的是一个运营概念。本质上，我们做技术的理解的消息推送应该是客户端将服务端更新的信息通知给客户。 推送的分类 APNs（Apple Push Notification services，即苹果推送通知服务） FCM（Firebase Cloud Messaging），原来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/connections.jpg">
+<meta property="og:image" content="https://jclian.com/2020/03/06/somethings-about-android-push-service/connections.jpg">
 <meta property="og:image" content="https://communityfile-drcn.op.hicloud.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20200121152547.29452826487859134320028369605651:50510120091754:2800:9F8B751FFD23EB7A3FD4A9D6EF369568D777EDFD68EBBDCE9469C51DCD140929.jpg?needInitFileName=true?needInitFileName=true">
 <meta property="og:image" content="https://f5.market.mi-img.com/download/MiPass/0de2d4f855c08ed2343e17463d29fd4644d4160f8/MiPush%E9%80%BB%E8%BE%91%E5%9B%BE.png">
 <meta property="og:image" content="https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/30049/cn_zh/1546048282352/%E5%9B%BE%E7%89%87.png">
@@ -97,7 +97,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android消息推送的一些个人理解">
 <meta name="twitter:description" content="关于消息推送什么是消息推送？“消息推送（Push）指运营人员通过自己的产品或第三方工具对用户移动设备进行的主动消息推送”。这句话讲的是一个运营概念。本质上，我们做技术的理解的消息推送应该是客户端将服务端更新的信息通知给客户。 推送的分类 APNs（Apple Push Notification services，即苹果推送通知服务） FCM（Firebase Cloud Messaging），原来">
-<meta name="twitter:image" content="https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/connections.jpg">
+<meta name="twitter:image" content="https://jclian.com/2020/03/06/somethings-about-android-push-service/connections.jpg">
 
 
 
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/">
+  <link rel="canonical" href="https://jclian.com/2020/03/06/somethings-about-android-push-service/">
 
 
 
 
 
-  <title>Android消息推送的一些个人理解 | 一窝鸡尼斯's Blog</title>
+  <title>Android消息推送的一些个人理解 | 一窝鸡尼斯's 技术分享</title>
   
 
 
@@ -206,7 +206,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">一窝鸡尼斯's Blog</span>
+        <span class="site-title">一窝鸡尼斯's 技术分享</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -237,6 +237,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
           </a>
         </li>
       
@@ -302,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/06/somethings-about-android-push-service/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -311,7 +321,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -366,6 +376,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/06/somethings-about-android-push-service/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/somethings-about-android-push-service/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -546,7 +566,7 @@
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://juejin.im/entry/56dc5578efa6310054d8cf1c" target="_blank" rel="noopener"># Android推送技术的研究</a></p>
 <p><a href="https://juejin.im/post/58db17b961ff4b006ce2ebc9" target="_blank" rel="noopener"># 安卓推送这件小事</a></p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&amp;mid=207243549&amp;idx=1&amp;sn=4ebe4beb8123f1b5ab58810ac8bc5994" target="_blank" rel="noopener"># Android微信智能心跳方案</a></p>
-<p>Check this <a href="https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/">https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/</a> @一窝鸡尼斯</p>
+<p>Check this <a href="https://jclian.com/2020/03/06/somethings-about-android-push-service/">https://jclian.com/2020/03/06/somethings-about-android-push-service/</a> @一窝鸡尼斯</p>
 
       
     </div>
@@ -577,7 +597,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/06/android-memo-somethings-about-developer/" rel="next" title="Android开发小技巧">
+              <a href="/2020/03/06/android-memo-compoundbutton/" rel="next" title="Android开发小技巧">
                 <i class="fa fa-chevron-left"></i> Android开发小技巧
               </a>
             
@@ -586,6 +606,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/19/memo-about-sequelize/" rel="prev" title="Sequelize 的一些技巧">
+                Sequelize 的一些技巧 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -614,6 +638,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -662,7 +689,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -673,7 +700,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -684,7 +711,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -741,8 +768,10 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">一窝鸡尼斯</span>
-
+ <span class="author" itemprop="copyrightHolder">一窝鸡尼斯</span>
+<span>
+ <a href="http://beian.miit.gov.cn/">粤ICP备19022243号</a>
+ </span>
   
 </div>
 
@@ -755,7 +784,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a></div>
 
 
 
@@ -855,13 +884,6 @@
   
   
 
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
   
 <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
@@ -905,6 +927,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NG5gzqcz2763rgVCVBlyPKEH-9Nh9j0Va',
+        appKey: 'bfbB7RHz1bY9zlrKipHfg8aB',
+        placeholder: 'I\'m Batman',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

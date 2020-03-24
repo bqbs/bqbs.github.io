@@ -5,7 +5,7 @@
 
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
@@ -82,13 +82,13 @@
 
 <meta name="description" content="尽量写点什么东西？">
 <meta property="og:type" content="website">
-<meta property="og:title" content="一窝鸡尼斯&#39;s Blog">
-<meta property="og:url" content="https://blog.jclian.com/index.html">
-<meta property="og:site_name" content="一窝鸡尼斯&#39;s Blog">
+<meta property="og:title" content="一窝鸡尼斯&#39;s 技术分享">
+<meta property="og:url" content="https://jclian.com/index.html">
+<meta property="og:site_name" content="一窝鸡尼斯&#39;s 技术分享">
 <meta property="og:description" content="尽量写点什么东西？">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一窝鸡尼斯&#39;s Blog">
+<meta name="twitter:title" content="一窝鸡尼斯&#39;s 技术分享">
 <meta name="twitter:description" content="尽量写点什么东西？">
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jclian.com/">
+  <link rel="canonical" href="https://jclian.com/">
 
 
 
 
 
-  <title>一窝鸡尼斯's Blog</title>
+  <title>一窝鸡尼斯's 技术分享</title>
   
 
 
@@ -199,7 +199,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">一窝鸡尼斯's Blog</span>
+        <span class="site-title">一窝鸡尼斯's 技术分享</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -230,6 +230,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
           </a>
         </li>
       
@@ -295,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2020/03/06/somethings-about-android-push-service/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/20/dockerfile-timezone/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -304,7 +314,303 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/dockerfile-timezone/" itemprop="url">Dcokerfile 时区定义</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T10:47:25+08:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/20/dockerfile-timezone/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/dockerfile-timezone/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          在构建镜像的时候需要定义一下时区。
+Alpine 基础镜像修改时区12345678# 更换源RUN sed -i &apos;s/dl-cdn.alpinelinux.org/mirrors.ustc
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/20/dockerfile-timezone/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/19/memo-about-sequelize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一窝鸡尼斯">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/19/memo-about-sequelize/" itemprop="url">Sequelize 的一些技巧</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-19T11:24:19+08:00">
+                2020-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/19/memo-about-sequelize/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/19/memo-about-sequelize/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          inner join &amp; left join
+required: true forces an inner join, use required: false to force a left 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/19/memo-about-sequelize/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/06/somethings-about-android-push-service/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一窝鸡尼斯">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -361,6 +667,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/06/somethings-about-android-push-service/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/somethings-about-android-push-service/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -443,7 +759,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2020/03/06/android-memo-somethings-about-developer/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/06/android-memo-compoundbutton/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -452,7 +768,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -462,7 +778,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/06/android-memo-somethings-about-developer/" itemprop="url">Android开发小技巧</a></h2>
+                <a class="post-title-link" href="/2020/03/06/android-memo-compoundbutton/" itemprop="url">Android开发小技巧</a></h2>
         
 
         <div class="post-meta">
@@ -510,6 +826,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/06/android-memo-compoundbutton/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/android-memo-compoundbutton/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -543,7 +869,7 @@ CompoundButtonCompoundButton赋值不执行业务代码
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/06/android-memo-somethings-about-developer/#more" rel="contents">
+            <a class="btn" href="/2020/03/06/android-memo-compoundbutton/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -594,7 +920,7 @@ CompoundButtonCompoundButton赋值不执行业务代码
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2020/03/03/pi-and-switch/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/03/pi-and-switch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -603,7 +929,7 @@ CompoundButtonCompoundButton赋值不执行业务代码
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -660,6 +986,16 @@ CompoundButtonCompoundButton赋值不执行业务代码
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/03/pi-and-switch/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/pi-and-switch/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -746,7 +1082,7 @@ CompoundButtonCompoundButton赋值不执行业务代码
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2019/08/22/sort_dota2_heros (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2019/08/22/sort_dota2_heros/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -755,7 +1091,7 @@ CompoundButtonCompoundButton赋值不执行业务代码
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -765,7 +1101,7 @@ CompoundButtonCompoundButton赋值不执行业务代码
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/22/sort_dota2_heros (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/" itemprop="url">Dota2英雄颜色排序</a></h2>
+                <a class="post-title-link" href="/2019/08/22/sort_dota2_heros/" itemprop="url">Dota2英雄颜色排序</a></h2>
         
 
         <div class="post-meta">
@@ -800,8 +1136,8 @@ CompoundButtonCompoundButton赋值不执行业务代码
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Coding4fun/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding4fun</span>
                   </a>
                 </span>
 
@@ -812,6 +1148,16 @@ CompoundButtonCompoundButton赋值不执行业务代码
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/22/sort_dota2_heros/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/22/sort_dota2_heros/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -849,7 +1195,7 @@ final
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/22/sort_dota2_heros (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/#more" rel="contents">
+            <a class="btn" href="/2019/08/22/sort_dota2_heros/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -900,7 +1246,7 @@ final
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2019/04/01/somethings_about_Tiny4412/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2019/04/01/somethings_about_Tiny4412/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -909,7 +1255,7 @@ final
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -966,6 +1312,16 @@ final
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/01/somethings_about_Tiny4412/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/01/somethings_about_Tiny4412/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1053,7 +1409,7 @@ final
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2019/04/01/linux_notes_for_me/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2019/04/01/linux_notes_for_me/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -1062,7 +1418,7 @@ final
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -1072,7 +1428,7 @@ final
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/01/linux_notes_for_me/" itemprop="url">烂笔头@常用的Linux命令</a></h2>
+                <a class="post-title-link" href="/2019/04/01/linux_notes_for_me/" itemprop="url">Linux烂笔头—常用命令</a></h2>
         
 
         <div class="post-meta">
@@ -1084,7 +1440,7 @@ final
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-01T22:41:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-01T22:41:00+08:00">
                 2019-04-01
               </time>
             
@@ -1119,6 +1475,16 @@ final
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/01/linux_notes_for_me/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/01/linux_notes_for_me/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1205,7 +1571,7 @@ final
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2019/04/01/use_jenkins (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2019/04/01/use_jenkins/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -1214,7 +1580,7 @@ final
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -1224,7 +1590,7 @@ final
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/01/use_jenkins (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/" itemprop="url">Jenkins安装、升级&迁移</a></h2>
+                <a class="post-title-link" href="/2019/04/01/use_jenkins/" itemprop="url">Jenkins安装、升级&迁移</a></h2>
         
 
         <div class="post-meta">
@@ -1272,6 +1638,16 @@ final
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/01/use_jenkins/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/01/use_jenkins/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1300,13 +1676,13 @@ final
           
           安装 &amp; 升级https://jenkins.io/zh/doc/book/installing/ 
 官方文档非常详细。建议查阅官方文档。
-下面记录一下自己升级的一点点经验。
+下面记录一下自己迁移的一点点经验。
 迁移迁移步骤：
 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/04/01/use_jenkins (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/#more" rel="contents">
+            <a class="btn" href="/2019/04/01/use_jenkins/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1357,7 +1733,7 @@ final
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2019/04/01/raspberry_pi_camera_live_streaming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -1366,7 +1742,7 @@ final
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
+      <meta itemprop="name" content="一窝鸡尼斯's 技术分享">
     </span>
 
     
@@ -1376,7 +1752,7 @@ final
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/01/raspberry_pi_camera_live_streaming/" itemprop="url">树莓派摄像头直播推流</a></h2>
+                <a class="post-title-link" href="/2019/04/01/raspberry_pi_camera_live_streaming/" itemprop="url">树莓派直播推流</a></h2>
         
 
         <div class="post-meta">
@@ -1388,7 +1764,7 @@ final
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-01T22:18:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-01T22:18:00+08:00">
                 2019-04-01
               </time>
             
@@ -1411,8 +1787,8 @@ final
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Raspberry-Pi/" itemprop="url" rel="index">
+                    <span itemprop="name">Raspberry Pi</span>
                   </a>
                 </span>
 
@@ -1423,6 +1799,16 @@ final
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/01/raspberry_pi_camera_live_streaming/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/01/raspberry_pi_camera_live_streaming/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1493,139 +1879,13 @@ final
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.jclian.com/2019/04/01/Hello (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一窝鸡尼斯">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一窝鸡尼斯's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/01/Hello (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/" itemprop="url">Hello World.</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-01T22:14:58+08:00">
-                2019-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          某书不太行呀。发邮件申诉解锁文章，一周过去，啥消息都没回。
-所以决定自己维护了。能不能让大家看到就随缘吧。
-努力写点什么。
-坚持写点什么。
-Check this https://blog.jclian
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/01/Hello (SFConflict lianjc@bonsoninfo.com 2020-03-12-11-39-04)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1669,7 +1929,7 @@ Check this https://blog.jclian
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1680,7 +1940,7 @@ Check this https://blog.jclian
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1691,7 +1951,7 @@ Check this https://blog.jclian
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1732,8 +1992,10 @@ Check this https://blog.jclian
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">一窝鸡尼斯</span>
-
+ <span class="author" itemprop="copyrightHolder">一窝鸡尼斯</span>
+<span>
+ <a href="http://beian.miit.gov.cn/">粤ICP备19022243号</a>
+ </span>
   
 </div>
 
@@ -1746,7 +2008,7 @@ Check this https://blog.jclian
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a></div>
 
 
 
@@ -1846,13 +2108,6 @@ Check this https://blog.jclian
   
   
 
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
   
 
   
@@ -1892,6 +2147,28 @@ Check this https://blog.jclian
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NG5gzqcz2763rgVCVBlyPKEH-9Nh9j0Va',
+        appKey: 'bfbB7RHz1bY9zlrKipHfg8aB',
+        placeholder: 'I\'m Batman',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
