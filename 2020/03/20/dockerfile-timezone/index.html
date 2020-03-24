@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Docker,">
 
 
 
@@ -81,15 +81,16 @@
 
 
 <meta name="description" content="在构建镜像的时候需要定义一下时区。 Alpine 基础镜像修改时区12345678# 更换源RUN sed -i &amp;apos;s/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g&amp;apos; /etc/apk/repositories# 修改时区并删除缓存RUN apk add --no-cache tzdata \    &amp;amp;&amp;amp; ln -sf">
+<meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dcokerfile 时区定义">
+<meta property="og:title" content="Dockerfile 时区定义">
 <meta property="og:url" content="https://jclian.com/2020/03/20/dockerfile-timezone/index.html">
 <meta property="og:site_name" content="一窝鸡尼斯&#39;s 技术分享">
 <meta property="og:description" content="在构建镜像的时候需要定义一下时区。 Alpine 基础镜像修改时区12345678# 更换源RUN sed -i &amp;apos;s/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g&amp;apos; /etc/apk/repositories# 修改时区并删除缓存RUN apk add --no-cache tzdata \    &amp;amp;&amp;amp; ln -sf">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-20T02:50:47.609Z">
+<meta property="og:updated_time" content="2020-03-24T13:31:42.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dcokerfile 时区定义">
+<meta name="twitter:title" content="Dockerfile 时区定义">
 <meta name="twitter:description" content="在构建镜像的时候需要定义一下时区。 Alpine 基础镜像修改时区12345678# 更换源RUN sed -i &amp;apos;s/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g&amp;apos; /etc/apk/repositories# 修改时区并删除缓存RUN apk add --no-cache tzdata \    &amp;amp;&amp;amp; ln -sf">
 
 
@@ -126,7 +127,7 @@
 
 
 
-  <title>Dcokerfile 时区定义 | 一窝鸡尼斯's 技术分享</title>
+  <title>Dockerfile 时区定义 | 一窝鸡尼斯's 技术分享</title>
   
 
 
@@ -234,16 +235,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -322,7 +313,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Dcokerfile 时区定义</h2>
+          <h2 class="post-title" itemprop="name headline">Dockerfile 时区定义</h2>
         
 
         <div class="post-meta">
@@ -344,6 +335,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂记/" itemprop="url" rel="index">
+                    <span itemprop="name">杂记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -399,6 +412,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+        </div>
       
 
       
@@ -497,7 +516,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -519,7 +538,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

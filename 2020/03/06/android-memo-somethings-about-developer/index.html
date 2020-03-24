@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Raspberry Pi,树莓派,Python,">
+  <meta name="keywords" content="Android,安卓,">
 
 
 
@@ -80,20 +80,18 @@
 
 
 
-<meta name="description" content="有一段时间，公司看门的大叔老提醒我：”工位上的的小风扇没有关了”。 因为懒和经常忘，弄了个usb串口继电器。接树莓派上，定时开关桌面上的小风扇。windows下也可以用。 继电器型号 LCUS-1  Check this https://jclian.com/2020/03/03/pi-and-switch/ @一窝鸡尼斯">
-<meta name="keywords" content="Raspberry Pi,树莓派,Python">
+<meta name="description" content="记录开发过程中的各种小技巧 CompoundButtonCompoundButton赋值不执行业务代码  加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;        if (!">
+<meta name="keywords" content="Android,安卓">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用 USB 继电器开关小风扇">
-<meta property="og:url" content="https://jclian.com/2020/03/03/pi-and-switch/index.html">
+<meta property="og:title" content="Android开发小技巧-CompoundButton">
+<meta property="og:url" content="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/index.html">
 <meta property="og:site_name" content="一窝鸡尼斯&#39;s 技术分享">
-<meta property="og:description" content="有一段时间，公司看门的大叔老提醒我：”工位上的的小风扇没有关了”。 因为懒和经常忘，弄了个usb串口继电器。接树莓派上，定时开关桌面上的小风扇。windows下也可以用。 继电器型号 LCUS-1  Check this https://jclian.com/2020/03/03/pi-and-switch/ @一窝鸡尼斯">
+<meta property="og:description" content="记录开发过程中的各种小技巧 CompoundButtonCompoundButton赋值不执行业务代码  加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;        if (!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/bqbs/usb_serial_switch/raw/master/IMG_20200116_103758.jpg">
-<meta property="og:updated_time" content="2020-03-16T16:32:03.520Z">
+<meta property="og:updated_time" content="2020-03-24T13:06:07.274Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用 USB 继电器开关小风扇">
-<meta name="twitter:description" content="有一段时间，公司看门的大叔老提醒我：”工位上的的小风扇没有关了”。 因为懒和经常忘，弄了个usb串口继电器。接树莓派上，定时开关桌面上的小风扇。windows下也可以用。 继电器型号 LCUS-1  Check this https://jclian.com/2020/03/03/pi-and-switch/ @一窝鸡尼斯">
-<meta name="twitter:image" content="https://github.com/bqbs/usb_serial_switch/raw/master/IMG_20200116_103758.jpg">
+<meta name="twitter:title" content="Android开发小技巧-CompoundButton">
+<meta name="twitter:description" content="记录开发过程中的各种小技巧 CompoundButtonCompoundButton赋值不执行业务代码  加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码 1234567compoundButton.setOnCheckedChangeListener &amp;#123; buttonView, isChecked -&amp;gt;        if (!">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://jclian.com/2020/03/03/pi-and-switch/">
+  <link rel="canonical" href="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/">
 
 
 
 
 
-  <title>用 USB 继电器开关小风扇 | 一窝鸡尼斯's 技术分享</title>
+  <title>Android开发小技巧-CompoundButton | 一窝鸡尼斯's 技术分享</title>
   
 
 
@@ -284,12 +282,6 @@
           <div id="content" class="content">
             
 
-<a href="https://github.com/bqbs/usb_serial_switch" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
-    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
-  </svg></a>
-
 <div id="posts" class="posts-expand">
   
 
@@ -304,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/03/pi-and-switch/">
+    <link itemprop="mainEntityOfPage" href="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一窝鸡尼斯">
@@ -321,7 +313,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">用 USB 继电器开关小风扇</h2>
+          <h2 class="post-title" itemprop="name headline">Android开发小技巧-CompoundButton</h2>
         
 
         <div class="post-meta">
@@ -333,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-03T13:56:00+08:00">
-                2020-03-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T13:41:00+08:00">
+                2020-03-06
               </time>
             
 
@@ -356,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding4fun/" itemprop="url" rel="index">
-                    <span itemprop="name">Coding4fun</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -374,8 +366,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/03/pi-and-switch/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/pi-and-switch/" itemprop="commentCount"></span>
+                <a href="/2020/03/06/android-memo-somethings-about-developer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/android-memo-somethings-about-developer/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,11 +395,26 @@
       
 
       
-        <p>有一段时间，公司看门的大叔老提醒我：”工位上的的小风扇没有关了”。</p>
-<p>因为懒和经常忘，弄了个usb串口继电器。接树莓派上，定时开关桌面上的小风扇。<br>windows下也可以用。</p>
-<p>继电器型号 LCUS-1</p>
-<p><img src="https://github.com/bqbs/usb_serial_switch/raw/master/IMG_20200116_103758.jpg" alt></p>
-<p>Check this <a href="https://jclian.com/2020/03/03/pi-and-switch/">https://jclian.com/2020/03/03/pi-and-switch/</a> @一窝鸡尼斯</p>
+        <p>记录开发过程中的各种小技巧</p>
+<h3 id="CompoundButton"><a href="#CompoundButton" class="headerlink" title="CompoundButton"></a>CompoundButton</h3><p>CompoundButton赋值不执行业务代码</p>
+<ol>
+<li><p>加上这个判定在使用setChecked方法或者isChecked属性的时候，就不会触发我们的业务代码</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">compoundButton.setOnCheckedChangeListener &#123; buttonView, isChecked -&gt;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!buttonView.isPressed) &#123;</span><br><span class="line">                <span class="keyword">return</span><span class="symbol">@setOnCheckedChangeListener</span></span><br><span class="line">         &#125;</span><br><span class="line">        <span class="comment">// 业务代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用setOnClickListener</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">compoundButton.setOnClickListener&#123;</span><br><span class="line">    <span class="keyword">if</span>(it.isChecked) &#123;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 赋值不触发onClickListener</span></span><br><span class="line">compoundButton.isChecked = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><p>赋值前设置listener先设为null</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compoundButton.setOnCheckedChangeListener(<span class="literal">null</span>)</span><br><span class="line">compoundButton.isChecked = <span class="literal">true</span></span><br><span class="line">compoundButton.setOnCheckedChangeListener(listener)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Kotlin扩展方法 </p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">fun</span> CompoundButton.<span class="title">setCustomChecked</span><span class="params">(value: <span class="type">Boolean</span>,listener: <span class="type">CompoundButton</span>.<span class="type">OnCheckedChangeListener</span>)</span></span> &#123;</span><br><span class="line">     setOnCheckedChangeListener(<span class="literal">null</span>)</span><br><span class="line">     isChecked = value</span><br><span class="line">     setOnCheckedChangeListener(listener)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>对CheckBox、RadioButton、Switch都有效。</p>
+<p>Check this <a href="https://jclian.com/2020/03/06/android-memo-somethings-about-developer/">https://jclian.com/2020/03/06/android-memo-somethings-about-developer/</a> @一窝鸡尼斯</p>
 
       
     </div>
@@ -425,11 +432,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Raspberry-Pi/" rel="tag"># Raspberry Pi</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/树莓派/" rel="tag"># 树莓派</a>
-          
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/安卓/" rel="tag"># 安卓</a>
           
         </div>
       
@@ -442,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/22/sort_dota2_heros/" rel="next" title="Dota2英雄颜色排序">
-                <i class="fa fa-chevron-left"></i> Dota2英雄颜色排序
+              <a href="/2020/03/03/pi-and-switch/" rel="next" title="用 USB 继电器开关小风扇">
+                <i class="fa fa-chevron-left"></i> 用 USB 继电器开关小风扇
               </a>
             
           </div>
@@ -452,8 +457,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/06/android-memo-somethings-about-developer/" rel="prev" title="Android开发小技巧-CompoundButton">
-                Android开发小技巧-CompoundButton <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/06/android-memo-compoundbutton/" rel="prev" title="Android开发小技巧">
+                Android开发小技巧 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -570,6 +584,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CompoundButton"><span class="nav-number">1.</span> <span class="nav-text">CompoundButton</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
